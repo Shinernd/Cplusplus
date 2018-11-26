@@ -1,4 +1,4 @@
-//stringstream changes input(string) to integer or float
+//stringstream converts string(input) to integer or float
 
 #include <iostream>
 #include <string>
