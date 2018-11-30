@@ -6,6 +6,7 @@ class CVector {
         int x, y;
         CVector () {}
         CVector (int a, int b) : x(a), y(b) {}
+        CVector & operator = (const CVector &); // Don't forget!
 };
 
 CVector operator + (const CVector & lhs, const CVector & rhs) {
@@ -15,11 +16,11 @@ CVector operator + (const CVector & lhs, const CVector & rhs) {
     return temp;
 }
 
-// ??
-CVector& CVector::operator = (const CVector& param) {
+// member functions that returns objects by reference, using "this"
+CVector& CVector::operator = (const CVector & param) {
     x = param.x;
     y = param.y;
-    return * this;
+    return * this; // Why not return this?: 'this' is a pointer of class, type == CVector *
 }
 
 int main () {
